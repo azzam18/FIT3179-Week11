@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "% Mobility of G20 Nations relative to AVG on Feb 29th, 2020"},
+  "description": "Population mobility of G20 Countries relative to AVG.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/datasciencecampus/google-mobility-reports-data/master/csvs/international_national_trends_G20_20200417.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "location", "type": "nominal"},
+    "y": {"field": "2020-02-29", "type": "quantitative"},
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Grocery & pharmacy",
+          "Parks",
+          "Residential",
+          "Retail & recreation",
+          "Transit stations",
+          "Workplaces"
+        ],
+        "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+      },
+      "title": "Location Category"
+    }
+  },
+  "config": {}
+}
